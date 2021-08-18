@@ -3,16 +3,16 @@ services:
   udagram-reverseproxy:
     build:
       context: ./udagram-reverseproxy
-    image: jwizerd/reverseproxy:v1.2
+    image: $DOCKER_USERNAME/reverseproxy:$VERSION
   udagram-api-user:
     build:
       context: ./udagram-api-user
-    image: jwizerd/udagram-api-user:v1.2
+    image: $DOCKER_USERNAME/udagram-api-user:$VERSION
   udagram-api-feed:
     build:
       context: ./udagram-api-feed
-    image: jwizerd/udagram-api-feed:v1.2
+    image: $DOCKER_USERNAME/udagram-api-feed:$VERSION
   udagram-frontend:
     build:
       context: ./udagram-frontend
-    image: jwizerd/udagram-frontend:v1.2
+    image: $DOCKER_USERNAME/udagram-frontend:$VERSION

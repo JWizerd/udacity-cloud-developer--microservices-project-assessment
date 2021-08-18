@@ -20,17 +20,17 @@ script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
 
   # Tagging
-  - docker tag udagram-api-feed jwizerd/udagram-api-feed:v1.2
-  - docker tag udagram-api-user jwizerd/udagram-api-user:v1.2
-  - docker tag udagram-frontend jwizerd/udagram-frontend:v1.2
-  - docker tag udagram-reverseproxy jwizerd/udagram-reverseproxy:v1.2
+  - docker tag udagram-api-feed "$DOCKER_USERNAME"/udagram-api-feed:"$VERSION"
+  - docker tag udagram-api-user "$DOCKER_USERNAME"/udagram-api-user:"$VERSION"
+  - docker tag udagram-frontend "$DOCKER_USERNAME"/udagram-frontend:"$VERSION"
+  - docker tag udagram-reverseproxy "$DOCKER_USERNAME"/udagram-reverseproxy:"$VERSION"
 
 after_success:
   # Push
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push jwizerd/udagram-api-feed:v1.2
-  - docker push jwizerd/udagram-api-user:v1.2
-  - docker push jwizerd/udagram-frontend:v1.2
-  - docker push jwizerd/udagram-reverseproxy:v1.2
+  - docker push "$DOCKER_USERNAME"/udagram-api-feed:"$VERSION"
+  - docker push "$DOCKER_USERNAME"/udagram-api-user:"$VERSION"
+  - docker push "$DOCKER_USERNAME"/udagram-frontend:"$VERSION"
+  - docker push "$DOCKER_USERNAME"/udagram-reverseproxy:"$VERSION"
 
 
