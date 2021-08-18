@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: udagram-api-user
-        image: jwizerd/udagram-api-user:latest
+        image: jwizerd/udagram-api-user:21
         ports:
         - containerPort: 8080
