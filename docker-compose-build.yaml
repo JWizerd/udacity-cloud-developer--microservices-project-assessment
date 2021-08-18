@@ -3,7 +3,7 @@ services:
   reverseproxy:
     build:
       context: ./udagram-reverseproxy
-    image: jwizerd/reverseproxy:v2
+    image: jwizerd/reverseproxy:v1
   backend_user:
     build:
       context: ./udagram-api-user
