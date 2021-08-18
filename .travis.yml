@@ -20,17 +20,17 @@ script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
 
   # Tagging
-  - docker tag udagram-api-feed jwizerd/udagram-api-feed:v$TRAVIS_BUILD_NUMBER
-  - docker tag udagram-api-user jwizerd/udagram-api-user:v$TRAVIS_BUILD_NUMBER
-  - docker tag udagram-frontend jwizerd/udagram-frontend:v$TRAVIS_BUILD_NUMBER
-  - docker tag udagram-reverseproxy jwizerd/udagram-reverseproxy:v$TRAVIS_BUILD_NUMBER
+  - docker tag udagram-api-feed jwizerd/udagram-api-feed:$TRAVIS_BUILD_NUMBER
+  - docker tag udagram-api-user jwizerd/udagram-api-user:$TRAVIS_BUILD_NUMBER
+  - docker tag udagram-frontend jwizerd/udagram-frontend:$TRAVIS_BUILD_NUMBER
+  - docker tag udagram-reverseproxy jwizerd/udagram-reverseproxy:$TRAVIS_BUILD_NUMBER
 
 after_success:
   # Push
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push jwizerd/udagram-api-feed:v$TRAVIS_BUILD_NUMBER
-  - docker push jwizerd/udagram-api-user:v$TRAVIS_BUILD_NUMBER
-  - docker push jwizerd/udagram-frontend:v$TRAVIS_BUILD_NUMBER
-  - docker push jwizerd/udagram-reverseproxy:v$TRAVIS_BUILD_NUMBER
+  - docker push jwizerd/udagram-api-feed:$TRAVIS_BUILD_NUMBER
+  - docker push jwizerd/udagram-api-user:$TRAVIS_BUILD_NUMBER
+  - docker push jwizerd/udagram-frontend:$TRAVIS_BUILD_NUMBER
+  - docker push jwizerd/udagram-reverseproxy:$TRAVIS_BUILD_NUMBER
 
 
