@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: udagram-api-user
-        image: $DOCKER_USERNAME/udagram-api-user:$VERSION
+        image: jwizerd/udagram-api-user:v1.4
         ports:
         - containerPort: 8080
         env:

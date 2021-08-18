@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: udagram-frontend
-        image: $DOCKER_USERNAME/udagram-frontend:$VERSION
+        image: jwizerd/udagram-frontend:v1.4
         imagePullPolicy:
         ports:
         - containerPort: 8080
