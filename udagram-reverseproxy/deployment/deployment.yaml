@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: udagram-reverseproxy
-        image: jwizerd/udagram-reverseproxy:21
+        image: jwizerd/udagram-reverseproxy:v2
         ports:
         - containerPort: 8080
