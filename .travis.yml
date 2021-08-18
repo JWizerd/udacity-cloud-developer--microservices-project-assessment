@@ -20,17 +20,17 @@ script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
 
   # Tagging
-  - docker tag udagram-api-feed "$DOCKER_USERNAME"/udagram-api-feed:"v1.4"
-  - docker tag udagram-api-user "$DOCKER_USERNAME"/udagram-api-user:"v1.4"
-  - docker tag udagram-frontend "$DOCKER_USERNAME"/udagram-frontend:"v1.4"
-  - docker tag udagram-reverseproxy "$DOCKER_USERNAME"/udagram-reverseproxy:"v1.4"
+  - docker tag udagram-api-feed "$DOCKER_USERNAME"/udagram-api-feed:v1.5
+  - docker tag udagram-api-user "$DOCKER_USERNAME"/udagram-api-user:v1.5
+  - docker tag udagram-frontend "$DOCKER_USERNAME"/udagram-frontend:v1.5
+  - docker tag udagram-reverseproxy "$DOCKER_USERNAME"/udagram-reverseproxy:v1.5
 
 after_success:
   # Push
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push "$DOCKER_USERNAME"/udagram-api-feed:"v1.4"
-  - docker push "$DOCKER_USERNAME"/udagram-api-user:"v1.4"
-  - docker push "$DOCKER_USERNAME"/udagram-frontend:"v1.4"
-  - docker push "$DOCKER_USERNAME"/udagram-reverseproxy:"v1.4"
+  - docker push "$DOCKER_USERNAME"/udagram-api-feed:v1.5
+  - docker push "$DOCKER_USERNAME"/udagram-api-user:v1.5
+  - docker push "$DOCKER_USERNAME"/udagram-frontend:v1.5
+  - docker push "$DOCKER_USERNAME"/udagram-reverseproxy:v1.5
 
 
