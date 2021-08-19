@@ -53,6 +53,7 @@ router.get('/verification',
     });
 
 router.post('/login', async (req: Request, res: Response) => {
+  console.log("User Login. START:" , Date.now());
   const email = req.body.email;
   const password = req.body.password;
 
@@ -76,11 +77,13 @@ router.post('/login', async (req: Request, res: Response) => {
   }
 
   const jwt = generateJWT(user);
+  console.log("User Login. END:", Date.now());
   res.status(200).send({auth: true, token: jwt, user: user.short()});
 });
 
 
 router.post('/', async (req: Request, res: Response) => {
+  console.log("User Registered. START:", Date.now());
   const email = req.body.email;
   const plainTextPassword = req.body.password;
 
@@ -108,6 +111,7 @@ router.post('/', async (req: Request, res: Response) => {
 
 
   const jwt = generateJWT(savedUser);
+  console.log("User Registered. END:", Date.now());
   res.status(201).send({token: jwt, user: savedUser.short()});
 });
 

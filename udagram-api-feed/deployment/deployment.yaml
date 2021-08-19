@@ -18,13 +18,6 @@ spec:
       - name: udagram-api-feed
         image: jwizerd/udagram-api-feed:v1.6
         imagePullPolicy: Always
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
         ports:
         - containerPort: 8080
         env:
