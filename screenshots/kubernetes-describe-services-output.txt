@@ -1,0 +1,125 @@
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.0.1
+IPs:               10.100.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         172.31.15.47:443,172.31.28.135:443
+Session Affinity:  None
+Events:            <none>
+
+
+Name:                     publicfrontend
+Namespace:                default
+Labels:                   app=udagram-frontend
+Annotations:              <none>
+Selector:                 app=udagram-frontend
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.100.120.40
+IPs:                      10.100.120.40
+LoadBalancer Ingress:     ad9c3817bfee240f4b5c2e9d30ab33d7-138904298.us-west-1.elb.amazonaws.com
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  31273/TCP
+Endpoints:                172.31.22.152:8080,172.31.25.102:8080,172.31.29.217:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:
+  Type     Reason                   Age                  From                Message
+  ----     ------                   ----                 ----                -------
+  Warning  UnAvailableLoadBalancer  49m                  service-controller  There are no available nodes for LoadBalancer
+  Normal   UpdatedLoadBalancer      6m48s (x3 over 49m)  service-controller  Updated load balancer with new hosts
+
+
+Name:                     reverseproxy
+Namespace:                default
+Labels:                   app=udagram-reverseproxy
+Annotations:              <none>
+Selector:                 app=udagram-reverseproxy
+Type:                     LoadBalancer
+IP Families:              <none>
+IP:                       10.100.193.188
+IPs:                      10.100.193.188
+LoadBalancer Ingress:     ae5246edcb83c43528c224c2523c42fc-2078217904.us-west-1.elb.amazonaws.com
+Port:                     <unset>  8080/TCP
+TargetPort:               8080/TCP
+NodePort:                 <unset>  32713/TCP
+Endpoints:                172.31.21.45:8080,172.31.21.8:8080,172.31.27.48:8080
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:
+  Type     Reason                   Age                  From                Message
+  ----     ------                   ----                 ----                -------
+  Warning  UnAvailableLoadBalancer  49m                  service-controller  There are no available nodes for LoadBalancer
+  Normal   UpdatedLoadBalancer      6m48s (x3 over 49m)  service-controller  Updated load balancer with new hosts
+
+
+Name:              udagram-api-feed
+Namespace:         default
+Labels:            app=udagram-api-feed
+Annotations:       <none>
+Selector:          app=udagram-api-feed
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.185.101
+IPs:               10.100.185.101
+Port:              <unset>  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.25.88:8080,172.31.28.242:8080,172.31.9.236:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              udagram-api-user
+Namespace:         default
+Labels:            app=udagram-api-user
+Annotations:       <none>
+Selector:          app=udagram-api-user
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.169.94
+IPs:               10.100.169.94
+Port:              <unset>  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.1.151:8080,172.31.12.218:8080,172.31.25.55:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              udagram-frontend
+Namespace:         default
+Labels:            app=udagram-frontend
+Annotations:       <none>
+Selector:          app=udagram-frontend
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.78.1
+IPs:               10.100.78.1
+Port:              <unset>  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.22.152:8080,172.31.25.102:8080,172.31.29.217:8080
+Session Affinity:  None
+Events:            <none>
+
+
+Name:              udagram-reverseproxy
+Namespace:         default
+Labels:            app=udagram-reverseproxy
+Annotations:       <none>
+Selector:          app=udagram-reverseproxy
+Type:              ClusterIP
+IP Families:       <none>
+IP:                10.100.125.67
+IPs:               10.100.125.67
+Port:              <unset>  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         172.31.21.45:8080,172.31.21.8:8080,172.31.27.48:8080
+Session Affinity:  None
+Events:            <none>
